@@ -8,7 +8,6 @@ interface PublicPostCardProps {
 
 export const PublicPostCard: React.FC<PublicPostCardProps> = ({ post }) => {
   const [comments, setComments] = useState<any[]>([])
-  const [loadingComments, setLoadingComments] = useState(false)
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString)
@@ -36,7 +35,6 @@ export const PublicPostCard: React.FC<PublicPostCardProps> = ({ post }) => {
 
   const loadComments = async () => {
     try {
-      setLoadingComments(true)
       const { data } = await supabase
         .from('comments')
         .select(`
@@ -49,8 +47,6 @@ export const PublicPostCard: React.FC<PublicPostCardProps> = ({ post }) => {
       setComments(data || [])
     } catch (error) {
       console.error('Error cargando comentarios:', error)
-    } finally {
-      setLoadingComments(false)
     }
   }
 
@@ -193,7 +189,7 @@ export const PublicPostCard: React.FC<PublicPostCardProps> = ({ post }) => {
                 background: 'var(--pixel-beige)',
                 overflow: 'hidden',
                 boxShadow: '4px 4px 0 var(--pixel-black)',
-                maxHeight: post.media_urls.length === 1 ? '400px' : '250px'
+                maxHeight: post.media_urls && post.media_urls.length === 1 ? '400px' : '250px'
               }}>
                 {mediaType === 'image' && (
                   <img 

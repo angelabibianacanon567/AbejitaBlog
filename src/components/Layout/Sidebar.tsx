@@ -231,7 +231,7 @@ export const Sidebar: React.FC = () => {
         overflowY: 'auto',
         transition: 'padding 0.3s ease'
       }}>
-        {menuItems.map((item, index) => {
+        {menuItems.map((item) => {
           const active = isActive(item.path)
           return (
             <button

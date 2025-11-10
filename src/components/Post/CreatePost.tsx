@@ -50,7 +50,7 @@ export const CreatePost: React.FC<CreatePostProps> = ({ onPostCreated }) => {
           const fileName = `${user?.id}/${timestamp}-${randomStr}.${fileExt}`
 
           // Subir archivo
-          const { data, error: uploadError } = await supabase.storage
+          const { error: uploadError } = await supabase.storage
             .from('post-media')
             .upload(fileName, file, {
               cacheControl: '3600',
