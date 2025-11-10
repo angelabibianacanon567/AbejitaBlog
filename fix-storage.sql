@@ -1,0 +1,34 @@
+-- ============================================
+-- 🔧 CONFIGURACIÓN DE STORAGE PARA POST-MEDIA
+-- ============================================
+-- NOTA: Este SQL es solo para referencia
+-- Las políticas de Storage se configuran desde la UI de Supabase
+-- ============================================
+-- 
+-- INSTRUCCIONES MANUALES:
+-- 
+-- 1. Ve a Storage en tu dashboard de Supabase
+-- 2. Si no existe, crea un bucket llamado "post-media"
+-- 3. Marca el bucket como "Public bucket" ✓
+-- 4. Ve a la pestaña "Policies"
+-- 
+-- POLÍTICA 1: Public Access (SELECT)
+-- - Policy name: "Public Access"
+-- - Allowed operation: SELECT
+-- - Target roles: public
+-- - USING expression: true
+-- 
+-- POLÍTICA 2: Authenticated Upload (INSERT)
+-- - Policy name: "Authenticated users can upload"
+-- - Allowed operation: INSERT
+-- - Target roles: authenticated
+-- - WITH CHECK expression: true
+-- 
+-- POLÍTICA 3: Authenticated Delete (DELETE)
+-- - Policy name: "Authenticated users can delete"
+-- - Allowed operation: DELETE
+-- - Target roles: authenticated
+-- - USING expression: auth.uid()::text = (storage.foldername(name))[1]
+-- 
+-- ============================================
+
