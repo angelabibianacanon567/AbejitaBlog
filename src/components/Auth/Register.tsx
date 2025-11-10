@@ -39,7 +39,7 @@ export const Register: React.FC = () => {
       <div className="pixel-card" style={{ maxWidth: '400px', width: '100%' }}>
         <div style={{ textAlign: 'center', marginBottom: '30px' }}>
           <div className="bee" style={{ margin: '0 auto 20px' }}></div>
-          <h1 style={{ fontSize: '20px', marginBottom: '10px' }}>🐝 ABEJITA BLOG</h1>
+          <h1 style={{ fontSize: '20px', marginBottom: '10px' }}>🐝 LITTLE HUMMINGBIRD</h1>
           <p style={{ fontSize: '10px', color: 'var(--pixel-gray)' }}>CREAR CUENTA</p>
         </div>
 

@@ -69,7 +69,7 @@ export const PublicHome: React.FC = () => {
             color: 'var(--pixel-black)',
             margin: 0
           }}>
-            ABEJITA BLOG
+            LITTLE HUMMINGBIRD
           </h1>
           <p style={{ fontSize: '10px', color: 'var(--pixel-brown)', margin: '5px 0 0' }}>
             Explora posts

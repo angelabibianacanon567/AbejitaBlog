@@ -152,7 +152,7 @@ export const Sidebar: React.FC = () => {
               color: 'var(--pixel-black)',
               textShadow: '2px 2px 0 rgba(255, 255, 255, 0.5)'
             }}>
-              ABEJITA BLOG
+              LITTLE HUMMINGBIRD
             </h1>
           </div>
         )}
